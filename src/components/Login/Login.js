@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { login } from '../../redux/actions/logInActions'
-import { Typography, Form, Input, Button } from 'antd';
+import { Typography, Form, Input, Button, Spin } from 'antd';
 
 const { Title } = Typography;
 
@@ -25,12 +24,18 @@ export class Login extends Component{
 
     handleSubmit = (e) => {
         e.preventDefault()
-        const { email, password } = this.state;
-        this.setState({isSubmitting: true}, 
-            () => this.props.login({ email: email, 
-                                        password: password
-                                    })
-        )
+        this.props.form.validateFieldsAndScroll((err, values) => {
+            if (!err) {
+                const { email, password } = this.state;
+                this.setState({isSubmitting: true}, 
+                    () => this.props.login({ email: email, 
+                                                password: password
+                                            }))
+            }
+            if(err) {
+                alert(this.props.lang.validation.checkForm);
+            }
+        })
     }
 
     componentDidUpdate(prevProps) {
@@ -44,28 +49,54 @@ export class Login extends Component{
         }
     }
 
-    
-
     render() {
-
+        const { lang } = this.props
+        const { getFieldDecorator } = this.props.form
         return (
             <div>
                 <Title level={2}>
-                    
+                    {lang.login.title}
                 </Title>
                 <Form  className='login-form' onSubmit={this.handleSubmit}>
                     <Form.Item>
-                        <Input size='large' placeholder='E-mail used during registration' name='email' onChange={this.handleChange} disabled={this.state.isSubmitting}/>
+                        {
+                            getFieldDecorator('email', {
+                                rules: [
+                                {
+                                    type: 'email',
+                                    message: lang.validation.emailNotValid,
+                                },
+                                {
+                                    required: true,
+                                    message: lang.validation.emailEmpty,
+                                },
+                                ],
+                            })(<Input size='large' placeholder={lang.login.emailPlaceholder} name='email' onChange={this.handleChange} disabled={this.state.isSubmitting}/>)
+                        }
                     </Form.Item>
                     <Form.Item>
-                        <Input size='large' type='password' placeholder='Password' name='password' onChange={this.handleChange} disabled={this.state.isSubmitting}/>
+                        {
+                            getFieldDecorator('password', {
+                                rules: [
+                                  {
+                                    required: true,
+                                    message: lang.validation.passwordEmpty,
+                                  },
+                                  {
+                                    min: 6,
+                                    message: lang.validation.passwordTooShort
+                                  },
+                                ],
+                              })(<Input size='large' type='password' placeholder={lang.login.passwordPlaceholder} name='password' onChange={this.handleChange} disabled={this.state.isSubmitting}/>)
+                        }  
                     </Form.Item>
                     <Form.Item>
                         <Button size='large' type='primary' htmlType='submit' block disabled={this.state.isSubmitting}>
-                            Log In
+                            {lang.login.buttonLabel}
                         </Button>
                     </Form.Item>
                 </Form>
+                {this.state.isSubmitting && <Spin/>}
             </div>
         )
     }
@@ -75,4 +106,6 @@ const mapStateToProps = state => ({
     loginStatus: state.login.status,
 })
 
-export default connect(mapStateToProps, { login })(Login)
+const WrappedLoginForm = Form.create({ name: 'login' })(Login);
+
+export default connect(mapStateToProps, { login })(WrappedLoginForm)

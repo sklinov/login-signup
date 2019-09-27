@@ -7,7 +7,6 @@ export function LanguageSwitcher(props) {
     
     const handleLanguageChange = (e) => {
         e.preventDefault()
-        console.log(e.target.value);
         props.switchLanguage(e.target.value);
     }
 

@@ -3,15 +3,15 @@
     {
         "title": "Log In",
         "emailPlaceholder" : "E-mail used during registration",
-        "passwordPlaceholer": "Password",
+        "passwordPlaceholder": "Password",
         "buttonLabel": "Log In"
     },
     "signup" :
     {
         "title": "Sign Up",
         "emailPlaceholder" : "Enter your e-mail",
-        "passwordPlaceholer": "Enter your password",
-        "confirmPasswordPlaceholer": "Confirm password",
+        "passwordPlaceholder": "Enter your password",
+        "confirmPasswordPlaceholder": "Confirm password",
         "namePlaceholder" : "Enter your name",
         "buttonLabel": "Sign Up"
     },
@@ -21,5 +21,17 @@
         "loginButtonLabel" : "Sign Up",
         "signUpHeader" : "Already registered?",
         "signupButtonLabel" : "Log in" 
+    },
+    "validation":
+    {
+        "checkForm" : "Please check your form for errors",
+        "emailNotValid" : "The input is not valid E-mail!",
+        "emailEmpty": "Please input your E-mail!",
+        "passwordEmpty": "Please input your password!",
+        "passwordTooShort": "Password should be at least 6 symbols",
+        "passwordConfirm" : "Please confirm your password!",
+        "passwordDoesntMatch" : "Two passwords that you enter do not match",
+        "nameEmpty": "Please input your name"
+
     }
 }

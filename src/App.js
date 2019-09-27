@@ -5,13 +5,6 @@ import LanguageSwitcher from './components/LanguageSwitcher/LanguageSwitcher';
 import MainForm from './components/MainForm/MainForm';
 import createStore from './redux/store/createStore';
 
-import i18next from './languages/i18n';
-
-
-i18next.init({
-    interpolation: { escapeValue: false },  // React already does escaping
-});
-
 const store = createStore();
 
 function App() {
