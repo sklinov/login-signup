@@ -1,6 +1,6 @@
 import { SWITCH_LANGUAGE } from '../actions/actionTypes';
 
-const initialState = {
+export const initialState = {
     language: 'en'
 }
 

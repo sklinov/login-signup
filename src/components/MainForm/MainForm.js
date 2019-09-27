@@ -20,12 +20,12 @@ export class MainForm extends Component {
 
     render() {
         return (
-            <div>
+            <div data-test="main-form">
                 <Row type="flex" justify="space-around">
                     <Col span={12}>
                         <Language>
-                            { this.state.showLogin ? <Login /> : <SignUp /> }
-                            <FormSwitcher showLogin={this.state.showLogin} onSwitch={this.switchForm}/>
+                            { this.state.showLogin ? <Login data-test="login"/> : <SignUp data-test="signup"/> }
+                            <FormSwitcher showLogin={this.state.showLogin} onSwitch={this.switchForm} data-test="form-switcher"/>
                         </Language>
                     </Col>
                 </Row>

@@ -45,10 +45,10 @@ export class Login extends Component{
         const { getFieldDecorator } = this.props.form
         return (
             <div>
-                <Title level={2}>
+                <Title level={2} data-test='title'>
                     {lang.login.title}
                 </Title>
-                <Form  className='login-form' onSubmit={this.handleSubmit}>
+                <Form  className='login-form' onSubmit={this.handleSubmit} data-test='form'>
                     <Form.Item>
                         {
                             getFieldDecorator('email', {
@@ -87,7 +87,7 @@ export class Login extends Component{
                         </Button>
                     </Form.Item>
                 </Form>
-                {this.state.isSubmitting && <Spin/>}
+                {this.state.isSubmitting && <Spin data-test='spin'/>}
             </div>
         )
     }
@@ -97,6 +97,6 @@ const mapStateToProps = state => ({
     loginStatus: state.login.status,
 })
 
-const WrappedLoginForm = Form.create({ name: 'login' })(Login);
+export const WrappedLoginForm = Form.create({ name: 'login' })(Login);
 
 export default connect(mapStateToProps, { login })(WrappedLoginForm)
