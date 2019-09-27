@@ -7,7 +7,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.ant-btn-primary {
+  background-color: #7BCC90 !important;
+  border-color: #7BCC90 !important;
+}
+
+.ant-btn {
+  border-color: #7BCC90 !important;
+}
+
+.ant-btn:hover {
+  color: #7BCC90 !important;
+  border-color: #7BCC90 !important;
+}
+
+.ant-radio-button-wrapper-checked {
+  color: #7BCC90 !important;
+  border-color: #7BCC90 !important;
 }

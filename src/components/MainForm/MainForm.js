@@ -14,27 +14,15 @@ export class MainForm extends Component {
         }
     }
 
-    // loginLabels = {
-    //     header: 'Are you here for the first time?',
-    //     buttonLabel: 'Sign Up'
-    // }
-
-    // signUpLabels = {
-    //     header: 'Already registered?',
-    //     buttonLabel: 'Log In'
-    // }
-
     switchForm = () => {
         this.setState( {showLogin: !this.state.showLogin})
     }
 
     render() {
-  //      const labels = this.state.showLogin ? this.loginLabels : this.signUpLabels;
-
         return (
             <div>
                 <Row type="flex" justify="space-around">
-                    <Col span={8}>
+                    <Col span={12}>
                         <Language>
                             { this.state.showLogin ? <Login /> : <SignUp /> }
                             <FormSwitcher showLogin={this.state.showLogin} onSwitch={this.switchForm}/>
@@ -44,8 +32,6 @@ export class MainForm extends Component {
             </div>
         )
     }
-
-
 }
 
 const mapStateToProps = state => ({
