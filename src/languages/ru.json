@@ -1,0 +1,37 @@
+{
+    "login" : 
+    {
+        "title": "Войти",
+        "emailPlaceholder" : "Адрес электронной почты",
+        "passwordPlaceholder": "Пароль",
+        "buttonLabel": "Войти"
+    },
+    "signup" :
+    {
+        "title": "Зарегистрироваться",
+        "emailPlaceholder" : "Введите адрес электронной почты",
+        "passwordPlaceholder": "Введите пароль",
+        "confirmPasswordPlaceholder": "Подтвердите пароль",
+        "namePlaceholder" : "Введите своё имя",
+        "buttonLabel": "Зарегистрироваться"
+    },
+    "formSwitch":
+    {
+        "loginHeader" : "Вы здесь впервые?",
+        "loginButtonLabel" : "Зарегистрироваться",
+        "signUpHeader" : "Уже зарегистрированы?",
+        "signupButtonLabel" : "Войти" 
+    },
+    "validation":
+    {
+        "checkForm" : "Пожалуйста, проверьте форму на ошибки",
+        "emailNotValid" : "Проверьте формат адреса электроной почты",
+        "emailEmpty": "Введите адрес электронной почты",
+        "passwordEmpty": "Введите пароль",
+        "passwordTooShort": "Пароль должен быть минимум 6 символов",
+        "passwordConfirm" : "Подтвердите свой пароль",
+        "passwordDoesntMatch" : "Пароли не совпадают",
+        "nameEmpty": "Введите имя"
+
+    }
+}
