@@ -2,16 +2,16 @@ import { takeEvery, put, delay } from 'redux-saga/effects'
 import { LOGIN_ASYNC, SIGNUP_ASYNC } from '../actions/actionTypes'
 
 const logInSaga = function* (action) {
-     //const { payload } = action;
+     console.log('Values received for login:', action.payload);
      const status = 'success'
-     yield delay(5000)
+     yield delay(3000)
      yield put({type: LOGIN_ASYNC, status: status});
 }
 
 const signUpSaga = function* (action) {
-    //const { payload } = action;
+    console.log('Values received for signup:', action.payload);
     const status = 'success'
-    yield delay(5000)
+    yield delay(3000)
     yield put({type: SIGNUP_ASYNC, status: status});
 }
 export function* watchLogIn() {

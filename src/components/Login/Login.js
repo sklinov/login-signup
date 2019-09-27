@@ -9,27 +9,20 @@ export class Login extends Component{
     constructor(props) {
         super(props)
         this.state = { 
-                        email: '',
-                        password: '',
                         isSubmitting: false,
                         submitSuccess: false,
                      }
     }
     
-    handleChange = (e) => {
-        e.preventDefault()
-        const { name, value } = e.target;
-        this.setState({ [name] : value });
-    }
 
     handleSubmit = (e) => {
         e.preventDefault()
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
-                const { email, password } = this.state;
+                const { email, password } = values;
                 this.setState({isSubmitting: true}, 
                     () => this.props.login({ email: email, 
-                                                password: password
+                                             password: password
                                             }))
             }
             if(err) {
@@ -43,9 +36,7 @@ export class Login extends Component{
             this.setState({
                 isSubmitting: false,
                 submitSuccess: true,
-                email: '',
-                password: ''
-            })
+            }, this.props.form.resetFields())
         }
     }
 
@@ -71,7 +62,7 @@ export class Login extends Component{
                                     message: lang.validation.emailEmpty,
                                 },
                                 ],
-                            })(<Input size='large' placeholder={lang.login.emailPlaceholder} name='email' onChange={this.handleChange} disabled={this.state.isSubmitting}/>)
+                            })(<Input size='large' placeholder={lang.login.emailPlaceholder} name='email' disabled={this.state.isSubmitting}/>)
                         }
                     </Form.Item>
                     <Form.Item>
@@ -87,7 +78,7 @@ export class Login extends Component{
                                     message: lang.validation.passwordTooShort
                                   },
                                 ],
-                              })(<Input size='large' type='password' placeholder={lang.login.passwordPlaceholder} name='password' onChange={this.handleChange} disabled={this.state.isSubmitting}/>)
+                              })(<Input size='large' type='password' placeholder={lang.login.passwordPlaceholder} name='password' disabled={this.state.isSubmitting}/>)
                         }  
                     </Form.Item>
                     <Form.Item>

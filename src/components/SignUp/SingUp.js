@@ -9,26 +9,16 @@ export class SignUp extends Component {
     constructor(props) {
         super(props)
         this.state = { 
-                        email: '',
-                        password: '',
-                        confirmPassword: '',
-                        name: '',
                         isSubmitting: false,
                         submitSuccess: false,
                     }
-    }
-
-    handleChange = (e) => {
-        e.preventDefault()
-        const { name, value } = e.target;
-        this.setState({[name] : value });
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
-                const { email, password, name } = this.state;
+                const { email, password, name } = values;
                 this.setState({isSubmitting: true},
                     () =>this.props.signup({ email: email, 
                                 password: password,
@@ -47,11 +37,7 @@ export class SignUp extends Component {
             this.setState({
                 isSubmitting: false,
                 submitSuccess: true,
-                email: '',
-                password: '',
-                confirmPassword: '',
-                name: ''
-            })
+            }, this.props.form.resetFields())
         }
     }
 
@@ -92,7 +78,7 @@ export class SignUp extends Component {
                                     message: lang.validation.emailEmpty,
                                 },
                                 ],
-                            })(<Input size='large' placeholder={lang.signup.emailPlaceholder} name='email' onChange={this.handleChange} disabled={this.state.isSubmitting}/>)
+                            })(<Input size='large' placeholder={lang.signup.emailPlaceholder} name='email' disabled={this.state.isSubmitting}/>)
                         }   
                     </Form.Item>
                     <Form.Item>
@@ -111,7 +97,7 @@ export class SignUp extends Component {
                                     message: lang.validation.passwordTooShort
                                   },
                                 ],
-                              })(<Input size='large' placeholder={lang.signup.passwordPlaceholder} type='password' name='password' onChange={this.handleChange} disabled={this.state.isSubmitting}/>)
+                              })(<Input size='large' placeholder={lang.signup.passwordPlaceholder} type='password' name='password' disabled={this.state.isSubmitting}/>)
                         }     
                     </Form.Item>
                     <Form.Item>
@@ -126,7 +112,7 @@ export class SignUp extends Component {
                                     validator: this.compareToFirstPassword,
                                   },
                                 ],
-                              })(<Input size='large' placeholder={lang.signup.confirmPasswordPlaceholder} type='password' name='confirmPassword' onChange={this.handleChange} disabled={this.state.isSubmitting}/>)
+                              })(<Input size='large' placeholder={lang.signup.confirmPasswordPlaceholder} type='password' name='confirmPassword' disabled={this.state.isSubmitting}/>)
                         }                       
                     </Form.Item>
                     <Form.Item>
@@ -138,7 +124,7 @@ export class SignUp extends Component {
                                     message: lang.validation.nameEmpty,
                                 },
                                 ],
-                            })(<Input size='large' placeholder={lang.signup.namePlaceholder} name='name' onChange={this.handleChange} disabled={this.state.isSubmitting}/>)
+                            })(<Input size='large' placeholder={lang.signup.namePlaceholder} name='name' disabled={this.state.isSubmitting}/>)
                         } 
                     </Form.Item>
         
