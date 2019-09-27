@@ -17,9 +17,7 @@ export function Language(props) {
     }
 
     const children = React.Children.map(props.children, child => {
-        return React.cloneElement(child, {
-          lang: lang
-        });
+        return React.cloneElement(child, { lang: lang });
       });
     return (
         <div>

@@ -1,4 +1,4 @@
-import { SIGNUP_ASYNC } from '../actions/actionTypes';
+import { SIGNUP_ASYNC } from '../actions/actionTypes'
 
 const initialState = {
     status: undefined
@@ -13,6 +13,6 @@ export default (state = initialState, action) => {
             )
         }
         default:
-            return state;
+            return state
     }
 }

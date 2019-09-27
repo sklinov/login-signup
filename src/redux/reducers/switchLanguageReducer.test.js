@@ -3,8 +3,8 @@ import switchLanguageReducer, { initialState } from './switchLanguageReducer'
 
 describe('Switch language reducer', ()=> {
     it('should return default state', () => {
-        const newState = switchLanguageReducer(undefined, {});
-        expect(newState).toEqual(initialState);
+        const newState = switchLanguageReducer(undefined, {})
+        expect(newState).toEqual(initialState)
     })
 
     it('should return correct state if SWITCH_LANGUAGE action received', () => {
@@ -15,7 +15,7 @@ describe('Switch language reducer', ()=> {
             type: SWITCH_LANGUAGE,
             payload: 'ru'
         }
-        const newState = switchLanguageReducer(undefined, action);
-        expect(newState).toEqual(referenceState);
+        const newState = switchLanguageReducer(undefined, action)
+        expect(newState).toEqual(referenceState)
     })
 })

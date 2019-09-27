@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { signup } from '../../redux/actions/signUpActions'
-import { Typography, Form, Input, Button, Spin } from 'antd';
+import { Typography, Form, Input, Button, Spin } from 'antd'
 
 const { Title } = Typography;
 
@@ -44,17 +44,17 @@ export class SignUp extends Component {
     validateToNextPassword = (rule, value, callback) => {
         const { form } = this.props;
         if (value && this.state.confirmDirty) {
-          form.validateFields(['confirm'], { force: true });
+          form.validateFields(['confirm'], { force: true })
         }
-        callback();
+        callback()
       };
 
     compareToFirstPassword = (rule, value, callback) => {
     const { form } = this.props;
     if (value && value !== form.getFieldValue('password')) {
-        callback(this.props.lang.validation.passwordDoesntatch);
+        callback(this.props.lang.validation.passwordDoesntatch)
     } else {
-        callback();
+        callback()
     }
     };
 

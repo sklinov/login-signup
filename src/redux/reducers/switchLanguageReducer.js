@@ -1,4 +1,4 @@
-import { SWITCH_LANGUAGE } from '../actions/actionTypes';
+import { SWITCH_LANGUAGE } from '../actions/actionTypes'
 
 export const initialState = {
     language: 'en'
@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
             )
         }
         default:
-            return state;
+            return state
     }
 
 }

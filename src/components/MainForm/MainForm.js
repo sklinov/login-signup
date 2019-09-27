@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import SignUp from '../SignUp/SingUp'
 import Login from '../Login/Login'
 import { FormSwitcher } from '../FormSwitcher/FormSwitcher'
-import { Row, Col } from 'antd';
+import { Row, Col } from 'antd'
 import Language from '../Language/Language'
 
 export class MainForm extends Component {

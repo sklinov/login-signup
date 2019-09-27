@@ -1,6 +1,6 @@
 import React from 'react'
-import { Typography, Button } from 'antd';
-const { Text } = Typography;
+import { Typography, Button } from 'antd'
+const { Text } = Typography
 
 export const FormSwitcher = (props) => {
     const { lang, showLogin } = props
@@ -15,7 +15,7 @@ export const FormSwitcher = (props) => {
         buttonLabel: lang.formSwitch.signupButtonLabel
     }
     
-    const labels = showLogin ? loginLabels : signUpLabels;
+    const labels = showLogin ? loginLabels : signUpLabels
 
     return (
         <div>

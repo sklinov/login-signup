@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { login } from '../../redux/actions/logInActions'
-import { Typography, Form, Input, Button, Spin } from 'antd';
+import { Typography, Form, Input, Button, Spin } from 'antd'
 
-const { Title } = Typography;
+const { Title } = Typography
 
 export class Login extends Component{
     constructor(props) {
@@ -13,7 +13,6 @@ export class Login extends Component{
                         submitSuccess: false,
                      }
     }
-    
 
     handleSubmit = (e) => {
         e.preventDefault()
