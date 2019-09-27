@@ -4860,6 +4860,13 @@ https-browserify@^1.0.0:
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
   integrity sha1-7AbBDgo0wPL68Zn3/X/Hj//QPHM=
 
+i18next@^17.0.16:
+  version "17.0.16"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-17.0.16.tgz#4bee0f84d6c79db3095f4eca6ded7920eea6b139"
+  integrity sha512-PtPiycw8H/45AAy2nuS3Ehov1X9k5V/gTJ89Uh8VAA3dx8EbsWwyP3c25fd4PWlLUey3YbRLTNPbre/dPho8Og==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+
 iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
   version "0.4.24"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"

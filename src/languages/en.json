@@ -1,0 +1,25 @@
+{
+    "login" : 
+    {
+        "title": "Log In",
+        "emailPlaceholder" : "E-mail used during registration",
+        "passwordPlaceholer": "Password",
+        "buttonLabel": "Log In"
+    },
+    "signup" :
+    {
+        "title": "Sign Up",
+        "emailPlaceholder" : "Enter your e-mail",
+        "passwordPlaceholer": "Enter your password",
+        "confirmPasswordPlaceholer": "Confirm password",
+        "namePlaceholder" : "Enter your name",
+        "buttonLabel": "Sign Up"
+    },
+    "formSwitch":
+    {
+        "loginHeader" : "Are you here for the first time?",
+        "loginButtonLabel" : "Sign Up",
+        "signUpHeader" : "Already registered?",
+        "signupButtonLabel" : "Log in" 
+    }
+}

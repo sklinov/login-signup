@@ -1,0 +1,25 @@
+{
+    "login" : 
+    {
+        "title": "Войти",
+        "emailPlaceholder" : "Адрес электронной почты",
+        "passwordPlaceholer": "Пароль",
+        "buttonLabel": "Войти"
+    },
+    "signup" :
+    {
+        "title": "Зарегистрироваться",
+        "emailPlaceholder" : "Введите адрес электронной почты",
+        "passwordPlaceholer": "Введите пароль",
+        "confirmPasswordPlaceholer": "Подтвердите пароль",
+        "namePlaceholder" : "Введите своё имя",
+        "buttonLabel": "Зарегистрироваться"
+    },
+    "formSwitch":
+    {
+        "loginHeader" : "Вы здесь впервые?",
+        "loginButtonLabel" : "Зарегистрироваться",
+        "signUpHeader" : "Уже зарегистрированы?",
+        "signupButtonLabel" : "Войти" 
+    }
+}

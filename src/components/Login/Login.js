@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { login } from '../../redux/actions/logInActions'
 import { Typography, Form, Input, Button } from 'antd';
@@ -43,11 +44,15 @@ export class Login extends Component{
         }
     }
 
+    
 
     render() {
+
         return (
             <div>
-                <Title level={2}>Log In</Title>
+                <Title level={2}>
+                    
+                </Title>
                 <Form  className='login-form' onSubmit={this.handleSubmit}>
                     <Form.Item>
                         <Input size='large' placeholder='E-mail used during registration' name='email' onChange={this.handleChange} disabled={this.state.isSubmitting}/>
@@ -69,6 +74,5 @@ export class Login extends Component{
 const mapStateToProps = state => ({
     loginStatus: state.login.status,
 })
-
 
 export default connect(mapStateToProps, { login })(Login)
